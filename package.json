@@ -75,7 +75,8 @@
     "blockchain",
     "boilerplate",
     "starter",
-    "starter-template"
+    "starter-template",
+    "suiware"
   ],
   "license": "MIT",
   "workspaces": [
