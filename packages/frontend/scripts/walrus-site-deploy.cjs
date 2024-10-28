@@ -29,6 +29,11 @@ const main = async () => {
 
   let siteObjectId = await readSiteObjectId(configFilePathFull)
 
+  console.log('Buying test WAL coins from the faucet...')
+  execSync(
+    `walrus --wallet ${WALLET_CONFIG_PATH_FULL} get-wal`, { stdio: 'inherit' }
+  )
+
   // If the site has not yet been published (no site object ID in the config),
   // then publish the site to Walrus Sites.
   if (siteObjectId == null) {
