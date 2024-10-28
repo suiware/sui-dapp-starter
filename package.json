@@ -84,9 +84,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kkomelin/sui-dapp-starter.git"
+    "url": "https://github.com/suiware/sui-dapp-starter.git"
   },
   "bugs": {
-    "url": "https://github.com/kkomelin/sui-dapp-starter/issues"
+    "url": "https://github.com/suiware/sui-dapp-starter/issues"
   } 
 }

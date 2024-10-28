@@ -1,5 +1,5 @@
 # Sui dApp Starter - Easy-to-Use Full-Stack Sui Starter
-[![Build and Lint (frontend)](https://github.com/kkomelin/sui-dapp-starter/actions/workflows/build_and_lint.yaml/badge.svg)](https://github.com/kkomelin/sui-dapp-starter/actions/workflows/build_and_lint.yaml)
+[![Build and Lint (frontend)](https://github.com/suiware/sui-dapp-starter/actions/workflows/build_and_lint.yaml/badge.svg)](https://github.com/suiware/sui-dapp-starter/actions/workflows/build_and_lint.yaml)
 [![Discord chat](https://img.shields.io/discord/1237259509366521866.svg?logo=discord&style=flat-square)](https://discord.com/invite/HuDPpXz4Hx)
 
 ![Spoiler](https://repository-images.githubusercontent.com/794883099/f0937c6b-c021-41db-b44a-a287b29111c3)
@@ -8,12 +8,12 @@
 
 ## Motivation
 
-Most of the Sui starters I found were either very basic or one-sided (frontend or backend). Thanks to my experience with various full-stack starters and templates, I knew how to do better, so I started this template with the goal of providing all basic tools and components for you to focus on your business logic from day one and not spend weeks on creating your app skeleton. // @kkomelin
+Most of the Sui starters I found were either very basic or one-sided (frontend or backend). Thanks to my experience with various full-stack starters and templates, I knew how to do better, so I started this template with the goal of providing all basic tools and components for you to focus on your business logic from day one and not spend weeks on creating your app skeleton. // [@kkomelin](https://github.com/kkomelin)
 
 ## Features
 
 - **[Suibase](https://suibase.io/)**: Painless work with the networks and system dependencies
-- **[Local Sui Explorer](https://github.com/kkomelin/sui-explorer)**: Browse your transactions and objects locally
+- **[Local Sui Explorer](https://github.com/suiware/sui-explorer)**: Browse your transactions and objects locally
 - **pnpm**: More efficient package management for monorepos
 - **TypeScript**: Less error-prone JavaScript
 - **React**: Good old React for truly decentralized apps
@@ -36,7 +36,7 @@ Before you begin, install the following:
 
 ## Installation
 
-**[Use this template ->](https://github.com/new?template_name=sui-dapp-starter&template_owner=kkomelin&name=my-first-sui-dapp)**
+**[Use this template ->](https://github.com/new?template_name=sui-dapp-starter&template_owner=suiware&name=my-sui-dapp)**
 
 or
 
@@ -112,6 +112,6 @@ pnpm test
 
 Copyright (c) 2024 Konstantin Komelin and other contributors
 
-Code is licensed under [MIT](https://github.com/kkomelin/sui-dapp-starter?tab=MIT-1-ov-file)
+Code is licensed under [MIT](https://github.com/suiware/sui-dapp-starter?tab=MIT-1-ov-file)
 
-SVG Graphics used for NFTs is licensed under [CC-BY 4.0](https://github.com/kkomelin/sui-dapp-starter?tab=CC-BY-4.0-2-ov-file)
+SVG Graphics used for NFTs is licensed under [CC-BY 4.0](https://github.com/suiware/sui-dapp-starter?tab=CC-BY-4.0-2-ov-file)

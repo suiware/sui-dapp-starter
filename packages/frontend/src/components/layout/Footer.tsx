@@ -43,16 +43,16 @@ const Footer = () => {
           <HeartIcon className="h-4 w-4" />
           <span>by</span>
           <Link
-            href="https://github.com/kkomelin"
+            href="https://github.com/suiware"
             target="_blank"
             rel="noopener noreferrer"
             highContrast={true}
           >
-            @kkomelin
+            @suiware
           </Link>
           <span>·</span>
           <Link
-            href="https://github.com/kkomelin/sui-dapp-starter/issues/new"
+            href="https://github.com/suiware/sui-dapp-starter/issues/new"
             target="_blank"
             rel="noopener noreferrer"
             highContrast={true}
