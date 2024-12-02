@@ -76,8 +76,7 @@ const useTransact = ({
 
     signAndExecute(
       {
-        // @fixme: fix this typing.
-        transaction: tx as any, 
+        transaction: tx,
       },
       {
         onError: (e: Error) => {
