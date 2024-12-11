@@ -76,9 +76,7 @@ const useTransact = ({
 
     signAndExecute(
       {
-        // @fixme: Fix the typing. Had to add this because of the version mismatch between @mysten/dapp-kit and some other deps.
-        /* eslint-disable  @typescript-eslint/no-explicit-any */
-        transaction: tx as any,
+        transaction: tx,
       },
       {
         onError: (e: Error) => {
