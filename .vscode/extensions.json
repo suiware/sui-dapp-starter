@@ -2,8 +2,9 @@
   "recommendations": [
     "mysten.move",
     "damirka.move-syntax",
+    "mysten.move-trace-debug",
+    "mysten.prettier-move",
     "tamasfe.even-better-toml",
-
     "esbenp.prettier-vscode"
   ]
 }
