@@ -97,7 +97,6 @@ pnpm test
 
 - [Troubleshooting Guide](https://sui-dapp-starter.dev/docs/misc/troubleshooting)
 - [Project Documentation](https://sui-dapp-starter.dev/docs)
-- [Improvement Ideas](https://sui-dapp-starter.dev/docs/misc/ideas)
 - [Discord Support](https://discord.com/invite/HuDPpXz4Hx)  
 
 ## Useful Links
