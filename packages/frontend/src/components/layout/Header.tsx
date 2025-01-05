@@ -1,8 +1,8 @@
 import { ConnectButton } from '@mysten/dapp-kit'
 import { Link } from '@radix-ui/themes'
+import Balance from '@suiware/kit/Balance'
+import NetworkType from '@suiware/kit/NetworkType'
 import Logo from '~~/assets/logo.svg'
-import Balance from '~~/components/Balance'
-import NetworkType from '~~/components/NetworkType'
 
 const Header = () => {
   return (

@@ -1,7 +1,7 @@
 import { useCurrentAccount } from '@mysten/dapp-kit'
 import { Link } from '@radix-ui/themes'
 import { HeartIcon, SearchIcon } from 'lucide-react'
-import Faucet from '~~/components/Faucet'
+import Faucet from '@suiware/kit/Faucet'
 import ThemeSwitcher from '~~/components/ThemeSwitcher'
 import {
   CONTRACT_PACKAGE_VARIABLE_NAME,
