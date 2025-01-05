@@ -1,13 +1,14 @@
 import { useCurrentAccount } from '@mysten/dapp-kit'
 import { Link } from '@radix-ui/themes'
-import { HeartIcon, SearchIcon } from 'lucide-react'
 import Faucet from '@suiware/kit/Faucet'
+import { HeartIcon, SearchIcon } from 'lucide-react'
 import ThemeSwitcher from '~~/components/ThemeSwitcher'
 import {
   CONTRACT_PACKAGE_VARIABLE_NAME,
   EXPLORER_URL_VARIABLE_NAME,
 } from '~~/config/networks'
 import { packageUrl } from '~~/helpers/networks'
+import { notification } from '~~/helpers/notification'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'
 
 const Footer = () => {
@@ -22,7 +23,10 @@ const Footer = () => {
       <div className="flex flex-row gap-3 lg:w-1/3">
         {currentAccount != null && (
           <>
-            <Faucet />
+            <Faucet
+              onError={notification.error}
+              onSuccess={notification.success}
+            />
             <Link
               href={packageUrl(explorerUrl, packageId)}
               target="_blank"
@@ -69,7 +73,9 @@ const Footer = () => {
             highContrast={true}
           >
             twitter/twemoji
-          </Link><br/>and licensed under{' '}
+          </Link>
+          <br />
+          and licensed under{' '}
           <Link
             href="https://creativecommons.org/licenses/by/4.0/"
             target="_blank"
