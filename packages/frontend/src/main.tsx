@@ -7,12 +7,30 @@ import App from '~~/components/App'
 import { reactRender } from '~~/helpers/misc.ts'
 import ThemeProvider from '~~/providers/ThemeProvider'
 import '~~/styles/index.css'
+import { APP_NAME } from './config/main'
 import { darkTheme, lightTheme } from './config/themes'
 import useNetworkConfig from './hooks/useNetworkConfig'
 import { ENetwork } from './types/ENetwork'
 
 const Main = () => {
   const { networkConfig } = useNetworkConfig()
+
+  const themeSettings = [
+    {
+      // Default to light theme.
+      variables: lightTheme,
+    },
+    {
+      // React to the color scheme media query.
+      mediaQuery: '(prefers-color-scheme: dark)',
+      variables: darkTheme,
+    },
+    {
+      // Reacts to the dark class.
+      selector: '.dark',
+      variables: darkTheme,
+    },
+  ]
 
   return (
     <StrictMode>
@@ -21,22 +39,8 @@ const Main = () => {
           customNetworkConfig={networkConfig}
           defaultNetwork={ENetwork.LOCALNET}
           walletAutoConnect={false}
-          themeSettings={[
-            {
-              // Default to light theme.
-              variables: lightTheme,
-            },
-            {
-              // React to the color scheme media query.
-              mediaQuery: '(prefers-color-scheme: dark)',
-              variables: darkTheme,
-            },
-            {
-              // Reacts to the dark class.
-              selector: '.dark',
-              variables: darkTheme,
-            },
-          ]}
+          walletStashedName={APP_NAME}
+          themeSettings={themeSettings}
         >
           <App />
         </SuiProvider>
