@@ -1,10 +1,15 @@
 import { useCurrentAccount } from '@mysten/dapp-kit'
+import { SuiSignAndExecuteTransactionOutput } from '@mysten/wallet-standard'
 import { Button, TextField } from '@radix-ui/themes'
+import useTransact from '@suiware/kit/useTransact'
 import { ChangeEvent, FC, MouseEvent, PropsWithChildren, useState } from 'react'
 import CustomConnectButton from '~~/components/CustomConnectButton'
 import AnimalEmoji from '~~/components/Emoji'
 import Loading from '~~/components/Loading'
-import { CONTRACT_PACKAGE_VARIABLE_NAME } from '~~/config/networks'
+import {
+  CONTRACT_PACKAGE_VARIABLE_NAME,
+  EXPLORER_URL_VARIABLE_NAME,
+} from '~~/config/networks'
 import {
   getResponseContentField,
   getResponseDisplayField,
@@ -15,10 +20,10 @@ import {
   prepareResetGreetingTransaction,
   prepareSetGreetingTransaction,
 } from '~~/helpers/greeting/transactions'
+import { transactionUrl } from '~~/helpers/networks'
 import { notification } from '~~/helpers/notification'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'
 import useOwnGreeting from '~~/hooks/useOwnGreeting'
-import useTransact from '~~/hooks/useTransact'
 
 const GreetingForm = () => {
   const [name, setName] = useState<string>('')
@@ -26,19 +31,61 @@ const GreetingForm = () => {
   const { data, isPending, error, refetch } = useOwnGreeting()
   const { useNetworkVariable } = useNetworkConfig()
   const packageId = useNetworkVariable(CONTRACT_PACKAGE_VARIABLE_NAME)
+  const [notificationId, setNotificationId] = useState<string>()
+  const explorerUrl = useNetworkVariable(EXPLORER_URL_VARIABLE_NAME)
+
   const { transact: create } = useTransact({
-    onSuccess: () => {
+    onBeforeStart: () => {
+      const nId = notification.txLoading()
+      setNotificationId(nId)
+    },
+    onSuccess: (data: SuiSignAndExecuteTransactionOutput) => {
+      notification.txSuccess(
+        transactionUrl(explorerUrl, data.digest),
+        notificationId
+      )
       refetch()
+      setNotificationId(undefined)
+    },
+    onError: (e: Error) => {
+      notification.txError(e, null, notificationId)
+      setNotificationId(undefined)
     },
   })
   const { transact: greet } = useTransact({
-    onSuccess: () => {
+    onBeforeStart: () => {
+      const nId = notification.txLoading()
+      setNotificationId(nId)
+    },
+    onSuccess: (data: SuiSignAndExecuteTransactionOutput) => {
+      notification.txSuccess(
+        transactionUrl(explorerUrl, data.digest),
+        notificationId
+      )
       refetch()
+      setNotificationId(undefined)
+    },
+    onError: (e: Error) => {
+      notification.txError(e, null, notificationId)
+      setNotificationId(undefined)
     },
   })
   const { transact: reset } = useTransact({
-    onSuccess: () => {
+    onBeforeStart: () => {
+      const nId = notification.txLoading()
+      setNotificationId(nId)
+    },
+    onSuccess: (data: SuiSignAndExecuteTransactionOutput) => {
+      notification.txSuccess(
+        transactionUrl(explorerUrl, data.digest),
+        notificationId
+      )
       refetch()
+      setNotificationId(undefined)
+    },
+    onError: (e: Error) => {
+      notification.txError(e, null, notificationId)
+      setNotificationId(undefined)
     },
   })
 
