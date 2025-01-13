@@ -20,8 +20,8 @@ importers:
   packages/frontend:
     dependencies:
       '@mysten/dapp-kit':
-        specifier: ^0.14.42
-        version: 0.14.42(@tanstack/react-query@5.62.7(react@19.0.0))(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.2)
+        specifier: ^0.14.46
+        version: 0.14.46(@tanstack/react-query@5.62.7(react@19.0.0))(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.2)
       '@mysten/sui':
         specifier: ^1.16.2
         version: 1.16.2(typescript@5.7.2)
@@ -410,8 +410,11 @@ packages:
   '@mysten/bcs@1.2.0':
     resolution: {integrity: sha512-LuKonrGdGW7dq/EM6U2L9/as7dFwnhZnsnINzB/vu08Xfrj0qzWwpLOiXagAa5yZOPLK7anRZydMonczFkUPzA==}
 
-  '@mysten/dapp-kit@0.14.42':
-    resolution: {integrity: sha512-FkuNkmUpUdL1t4ozQY6ZSQq2wd1nMAjFyIoStooGi53iBhpCwp+C2juQDpxvbWIgpjRyHjScEMRSU5J+BpkYGA==}
+  '@mysten/bcs@1.2.1':
+    resolution: {integrity: sha512-RMSaUsNb8oR0rTRVIOOcyoEVJqQi6DLvMXN+7mvDcki12FJFQ0lF89zQa7AV7cIurWlDQfJ8VIbCuRDyK+955A==}
+
+  '@mysten/dapp-kit@0.14.46':
+    resolution: {integrity: sha512-NDnEiKXSxe1bsjvzxIKFdGTdINzj3fMdOPRasdA/m2UTxOyKHmMw+ECvpfBHLbAeZ3Tsw7KReL8Jz/A8fo0ohg==}
     peerDependencies:
       '@tanstack/react-query': ^5.0.0
       react: '*'
@@ -420,11 +423,18 @@ packages:
     resolution: {integrity: sha512-1Nfm7iTs3IVsiCXFPrnci9Y7fP9ldtwNOTe7JRkaHTg58VRhSe/nhHOvt6UsYiswVPUBqlsSF73KER5MpirCvw==}
     engines: {node: '>=18'}
 
+  '@mysten/sui@1.19.0':
+    resolution: {integrity: sha512-hjNCArz7upZaGZNNmMeQRKSlQK73eN+p8MlKJvlZpx/6gorK0WWFWWjEcIyJndkIDbLb06nbQbWIWZ8KoI036Q==}
+    engines: {node: '>=18'}
+
   '@mysten/wallet-standard@0.13.18':
     resolution: {integrity: sha512-f1NU51AgiRunTa7LJhJsQabbIzUT5vWpqxN847rU7HDwFhExBsXAxCkxQrzgXZc9fX/ZaoOVexpolGI1TC7Xjw==}
 
-  '@mysten/zksend@0.12.8':
-    resolution: {integrity: sha512-qdSPamcrxhZ36KCXRwnPwAOMaOeHMD4QaMRh7XU1q4LBFmgV+K/3BLRGQQ4OtIvU2Ou7ErF/WlSjf+/c82szSw==}
+  '@mysten/wallet-standard@0.13.22':
+    resolution: {integrity: sha512-pMGY5BkZzEGcSH0qDxjbk/KKg8jIr7MLvSBg/YHLrfUC3WPOUwrSVjmjuGaSPEa/QI3Kj3mzwx9OH9C7OYW94A==}
+
+  '@mysten/zksend@0.12.12':
+    resolution: {integrity: sha512-h7B4fCxpN1iK6pUNuz0x9rGzU6k4uQbfb/+6uJsV0kGRLN2cbS4wdFTPD+6g4xPrf94N0fHt2C+mlYOBfvGJ6g==}
 
   '@noble/curves@1.7.0':
     resolution: {integrity: sha512-UTMhXK9SeDhFJVrHeUJ5uZlI6ajXg10O6Ddocf9S6GjbSBVZsJo88HzKwXznNfGpMTRDyJkqMjNDPYgf0qFWnw==}
@@ -1139,6 +1149,10 @@ packages:
   '@scure/bip39@1.5.0':
     resolution: {integrity: sha512-Dop+ASYhnrwm9+HA/HwXg7j2ZqM6yk2fyLWb5znexjctFY3+E+eU8cIWI0Pql0Qx4hPZCijlGq4OL71g+Uz30A==}
 
+  '@simplewebauthn/typescript-types@7.4.0':
+    resolution: {integrity: sha512-8/ZjHeUPe210Bt5oyaOIGx4h8lHdsQs19BiOT44gi/jBEgK7uBGA0Fy7NRsyh777al3m6WM0mBf0UR7xd4R7WQ==}
+    deprecated: This package has been renamed to @simplewebauthn/types. Please install @simplewebauthn/types instead to ensure you receive future updates.
+
   '@suchipi/femver@1.0.0':
     resolution: {integrity: sha512-bprE8+K5V+DPX7q2e2K57ImqNBdfGHDIWaGI5xHxZoxbKOuQZn4wzPiUxOAHnsUr3w3xHrWXwN7gnG/iIuEMIg==}
 
@@ -1325,6 +1339,15 @@ packages:
   '@wallet-standard/core@1.0.3':
     resolution: {integrity: sha512-Jb33IIjC1wM1HoKkYD7xQ6d6PZ8EmMZvyc8R7dFgX66n/xkvksVTW04g9yLvQXrLFbcIjHrCxW6TXMhvpsAAzg==}
     engines: {node: '>=16'}
+
+  '@wallet-standard/core@1.1.0':
+    resolution: {integrity: sha512-v2W5q/NlX1qkn2q/JOXQT//pOAdrhz7+nOcO2uiH9+a0uvreL+sdWWqkhFmMcX+HEBjaibdOQMUoIfDhOGX4XA==}
+    engines: {node: '>=16'}
+
+  '@wallet-standard/errors@0.1.0':
+    resolution: {integrity: sha512-ag0eq5ixy7rz8M5YUWGi/EoIJ69KJ+KILFNunoufgmXVkiISC7+NIZXJYTJrapni4f9twE1hfT+8+IV2CYCvmg==}
+    engines: {node: '>=16'}
+    hasBin: true
 
   '@wallet-standard/features@1.1.0':
     resolution: {integrity: sha512-hiEivWNztx73s+7iLxsuD1sOJ28xtRix58W7Xnz4XzzA/pF0+aicnWgjOdA10doVDEDZdUuZCIIqG96SFNlDUg==}
@@ -3018,11 +3041,15 @@ snapshots:
     dependencies:
       bs58: 6.0.0
 
-  '@mysten/dapp-kit@0.14.42(@tanstack/react-query@5.62.7(react@19.0.0))(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.2)':
+  '@mysten/bcs@1.2.1':
     dependencies:
-      '@mysten/sui': 1.16.2(typescript@5.7.2)
-      '@mysten/wallet-standard': 0.13.18(typescript@5.7.2)
-      '@mysten/zksend': 0.12.8(typescript@5.7.2)
+      bs58: 6.0.0
+
+  '@mysten/dapp-kit@0.14.46(@tanstack/react-query@5.62.7(react@19.0.0))(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.2)':
+    dependencies:
+      '@mysten/sui': 1.19.0(typescript@5.7.2)
+      '@mysten/wallet-standard': 0.13.22(typescript@5.7.2)
+      '@mysten/zksend': 0.12.12(typescript@5.7.2)
       '@radix-ui/react-dialog': 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-dropdown-menu': 2.1.2(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-slot': 1.1.0(@types/react@19.0.1)(react@19.0.0)
@@ -3064,6 +3091,27 @@ snapshots:
       - '@gql.tada/vue-support'
       - typescript
 
+  '@mysten/sui@1.19.0(typescript@5.7.2)':
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.9.0)
+      '@mysten/bcs': 1.2.1
+      '@noble/curves': 1.7.0
+      '@noble/hashes': 1.6.1
+      '@scure/bip32': 1.6.0
+      '@scure/bip39': 1.5.0
+      '@simplewebauthn/typescript-types': 7.4.0
+      '@suchipi/femver': 1.0.0
+      bech32: 2.0.0
+      gql.tada: 1.8.10(graphql@16.9.0)(typescript@5.7.2)
+      graphql: 16.9.0
+      jose: 5.9.6
+      poseidon-lite: 0.2.1
+      valibot: 0.36.0
+    transitivePeerDependencies:
+      - '@gql.tada/svelte-support'
+      - '@gql.tada/vue-support'
+      - typescript
+
   '@mysten/wallet-standard@0.13.18(typescript@5.7.2)':
     dependencies:
       '@mysten/sui': 1.16.2(typescript@5.7.2)
@@ -3073,10 +3121,19 @@ snapshots:
       - '@gql.tada/vue-support'
       - typescript
 
-  '@mysten/zksend@0.12.8(typescript@5.7.2)':
+  '@mysten/wallet-standard@0.13.22(typescript@5.7.2)':
     dependencies:
-      '@mysten/sui': 1.16.2(typescript@5.7.2)
-      '@mysten/wallet-standard': 0.13.18(typescript@5.7.2)
+      '@mysten/sui': 1.19.0(typescript@5.7.2)
+      '@wallet-standard/core': 1.1.0
+    transitivePeerDependencies:
+      - '@gql.tada/svelte-support'
+      - '@gql.tada/vue-support'
+      - typescript
+
+  '@mysten/zksend@0.12.12(typescript@5.7.2)':
+    dependencies:
+      '@mysten/sui': 1.19.0(typescript@5.7.2)
+      '@mysten/wallet-standard': 0.13.22(typescript@5.7.2)
       mitt: 3.0.1
       nanostores: 0.10.3
       valibot: 0.36.0
@@ -3856,6 +3913,8 @@ snapshots:
       '@noble/hashes': 1.6.1
       '@scure/base': 1.2.1
 
+  '@simplewebauthn/typescript-types@7.4.0': {}
+
   '@suchipi/femver@1.0.0': {}
 
   '@swc/core-darwin-arm64@1.10.1':
@@ -4060,6 +4119,19 @@ snapshots:
       '@wallet-standard/base': 1.1.0
       '@wallet-standard/features': 1.1.0
       '@wallet-standard/wallet': 1.1.0
+
+  '@wallet-standard/core@1.1.0':
+    dependencies:
+      '@wallet-standard/app': 1.1.0
+      '@wallet-standard/base': 1.1.0
+      '@wallet-standard/errors': 0.1.0
+      '@wallet-standard/features': 1.1.0
+      '@wallet-standard/wallet': 1.1.0
+
+  '@wallet-standard/errors@0.1.0':
+    dependencies:
+      chalk: 5.3.0
+      commander: 12.1.0
 
   '@wallet-standard/features@1.1.0':
     dependencies:
