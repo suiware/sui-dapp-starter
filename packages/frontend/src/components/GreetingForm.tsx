@@ -45,11 +45,9 @@ const GreetingForm = () => {
         notificationId
       )
       refetch()
-      setNotificationId(undefined)
     },
     onError: (e: Error) => {
       notification.txError(e, null, notificationId)
-      setNotificationId(undefined)
     },
   })
   const { transact: greet } = useTransact({
@@ -63,11 +61,9 @@ const GreetingForm = () => {
         notificationId
       )
       refetch()
-      setNotificationId(undefined)
     },
     onError: (e: Error) => {
       notification.txError(e, null, notificationId)
-      setNotificationId(undefined)
     },
   })
   const { transact: reset } = useTransact({
@@ -81,11 +77,9 @@ const GreetingForm = () => {
         notificationId
       )
       refetch()
-      setNotificationId(undefined)
     },
     onError: (e: Error) => {
       notification.txError(e, null, notificationId)
-      setNotificationId(undefined)
     },
   })
 
