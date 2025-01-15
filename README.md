@@ -96,6 +96,7 @@ pnpm test
 ## Docs & Support
 
 - [Project Documentation](https://sui-dapp-starter.dev/docs)
+- [Available PNPM Commands](https://sui-dapp-starter.dev/docs/misc/commands/)
 - [Discord Support](https://discord.com/invite/HuDPpXz4Hx)  
 
 ## Useful Links
