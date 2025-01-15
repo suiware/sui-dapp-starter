@@ -1,9 +1,9 @@
 import { useCurrentAccount } from '@mysten/dapp-kit'
+import useNetworkType from '@suiware/kit/useNetworkType'
 import { isNetworkSupported, supportedNetworks } from '~~/helpers/networks'
-import useSynchronizedNetworkType from '~~/hooks/useSynchronizedNetworkType'
 
 const NetworkSupportChecker = () => {
-  const { networkType } = useSynchronizedNetworkType()
+  const { networkType } = useNetworkType()
   const currentAccount = useCurrentAccount()
 
   const okNetworks = supportedNetworks()
@@ -12,7 +12,9 @@ const NetworkSupportChecker = () => {
     return <></>
   }
 
-  if (networkType == null || isNetworkSupported(networkType)) {
+  // @fixme: Find a better type for the networkType.
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  if (networkType == null || isNetworkSupported(networkType as any)) {
     return <></>
   }
 

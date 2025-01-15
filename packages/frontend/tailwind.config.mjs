@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'selector',
+  // Support multiple approaches for switching between light and dark mode.
+  darkMode: [
+    'variant',
+    [
+      '@media (prefers-color-scheme: dark) { &:not(.light *) }',
+      '&:is(.dark *)',
+    ],
+  ],
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
@@ -14,7 +21,7 @@ export default {
         'sds-accent-a11': 'var(--accent-a11)',
       },
       fontFamily: {
-        inter: 'var(--sds-font-inter)'
+        inter: 'var(--sds-font-inter)',
       },
       boxShadow: {
         // The color from Radix theme is used.
