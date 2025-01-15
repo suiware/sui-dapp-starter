@@ -95,12 +95,12 @@ pnpm test
 
 ## Docs & Support
 
-- [Troubleshooting Guide](https://sui-dapp-starter.dev/docs/misc/troubleshooting)
 - [Project Documentation](https://sui-dapp-starter.dev/docs)
 - [Discord Support](https://discord.com/invite/HuDPpXz4Hx)  
 
 ## Useful Links
 
+- [Useful VSCode Extensions](./.vscode/extensions.json)
 - [Suibase Docs](https://suibase.io/intro.html)
 - [Move Book](https://move-book.com/)
 - [Sui Move: Code Conventions](https://docs.sui.io/concepts/sui-move-concepts/conventions)
