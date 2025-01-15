@@ -95,9 +95,9 @@ pnpm test
 
 ## Docs & Support
 
-- [Sui dApp Starter Documentation](https://sui-dapp-starter.dev/docs)
-- [@suiware/kit Documentation](https://www.npmjs.com/package/@suiware/kit)
+- [Sui dApp Starter Docs](https://sui-dapp-starter.dev/docs)
 - [Available PNPM Commands](https://sui-dapp-starter.dev/docs/misc/commands/)
+- [@suiware/kit Docs](https://www.npmjs.com/package/@suiware/kit)
 - [Discord Support](https://discord.com/invite/HuDPpXz4Hx)  
 
 ## Useful Links
