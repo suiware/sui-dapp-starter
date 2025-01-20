@@ -10,6 +10,9 @@
     "lint": "pnpm frontend:lint",
     "format": "pnpm frontend:format",
 
+    "frontend:init:react": "rm -rf ./packages/frontend-next",
+    "frontend:init:nextjs": "rm -rf ./packages/frontend && mv -f ./packages/frontend-next ./packages/frontend",
+    
     "frontend:dev": "pnpm --filter frontend dev",
     "frontend:build": "pnpm --filter frontend build",
     "frontend:lint": "pnpm --filter frontend lint",

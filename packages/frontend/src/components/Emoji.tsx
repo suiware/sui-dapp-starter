@@ -18,4 +18,3 @@ const AnimalEmoji: FC<IProps> = ({ index }) => {
 }
 
 export default AnimalEmoji
-
