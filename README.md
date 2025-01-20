@@ -36,13 +36,32 @@ Before you begin, install the following:
 
 ## Installation
 
-**[Use this template ->](https://github.com/new?template_name=sui-dapp-starter&template_owner=suiware&name=my-sui-dapp)**
+### Option 1. Use the Github template
 
-or
+1. [Create a new project from the template](https://github.com/new?template_name=sui-dapp-starter&template_owner=suiware&name=my-sui-dapp).
+
+2. Clone the resulting repo locally.
+
+3. Choose the frontend framework:
+
+For React frontend run:
+```bash
+pnpm frontend:init:react
+```
+
+For Next.js frontend run:
+
+```bash
+pnpm frontend:init:nextjs
+```
+
+### Option 2. Use CLI
 
 ```bash
 pnpm create sui-dapp@latest
 ```
+
+This way you'll be able to configure the project step-by-step.
 
 ## Usage
 
