@@ -23,14 +23,15 @@ export const supportedNetworks = () => {
   const keys = Object.keys(ENetwork)
 
   return (
-  keys
-    .filter(
-      (key: string) =>
-        process.env[`NEXT_PUBLIC_${key.toUpperCase()}_CONTRACT_PACKAGE_ID`] !=
-          null &&
-        process.env[`NEXT_PUBLIC_${key.toUpperCase()}_CONTRACT_PACKAGE_ID`] !==
-          CONTRACT_PACKAGE_ID_NOT_DEFINED
-    )
+    keys
+      .filter(
+        (key: string) =>
+          process.env[`NEXT_PUBLIC_${key.toUpperCase()}_CONTRACT_PACKAGE_ID`] !=
+            null &&
+          process.env[
+            `NEXT_PUBLIC_${key.toUpperCase()}_CONTRACT_PACKAGE_ID`
+          ] !== CONTRACT_PACKAGE_ID_NOT_DEFINED
+      )
       // @ts-expect-error Hard to type cast string->ENetwork here.
       .map((key: string) => ENetwork[key as ENetwork])
   )

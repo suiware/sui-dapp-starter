@@ -5,7 +5,7 @@ const config = {
   useTabs: false,
   semi: false,
   singleQuote: true,
-  tailwindConfig: './tailwind.config.mjs',
+  tailwindConfig: './tailwind.config.ts',
   plugins: ['prettier-plugin-tailwindcss'],
   tailwindFunctions: ['clsx', 'c', 'cn'],
 }

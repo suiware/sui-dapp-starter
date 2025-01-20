@@ -1,16 +1,16 @@
-import { darkTheme, lightTheme } from "../config/themes";
-import { TTheme } from "../types/TTheme";
+import { darkTheme, lightTheme } from '../config/themes'
+import { TTheme } from '../types/TTheme'
 
 export const detectBrowserTheme = (): TTheme => {
-  if (typeof window === "undefined") {
-    return "light";
+  if (typeof window === 'undefined') {
+    return 'light'
   }
 
-  return !("theme" in window.localStorage) &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
+  return !('theme' in window.localStorage) &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
+}
 
 export const getThemeSettings = () => [
   {
@@ -19,12 +19,12 @@ export const getThemeSettings = () => [
   },
   {
     // React to the color scheme media query.
-    mediaQuery: "(prefers-color-scheme: dark)",
+    mediaQuery: '(prefers-color-scheme: dark)',
     variables: darkTheme,
   },
   {
     // Reacts to the dark class.
-    selector: ".dark",
+    selector: '.dark',
     variables: darkTheme,
   },
-];
+]

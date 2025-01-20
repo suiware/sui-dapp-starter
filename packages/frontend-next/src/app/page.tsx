@@ -1,5 +1,5 @@
-import GreetingForm from "./components/GreetingForm";
-import NetworkSupportChecker from "./components/NetworkSupportChecker";
+import GreetingForm from './components/GreetingForm'
+import NetworkSupportChecker from './components/NetworkSupportChecker'
 
 export default function Home() {
   return (
@@ -9,5 +9,5 @@ export default function Home() {
         <GreetingForm />
       </div>
     </>
-  );
+  )
 }

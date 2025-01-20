@@ -15,10 +15,14 @@ const Header = () => {
         href="#"
         className="flex flex-col items-center justify-center gap-1 text-sds-dark outline-none hover:no-underline sm:flex-row dark:text-sds-light"
       >
-        <Image width={40} height={40} src={Logo} alt="Logo" className="h-12 w-12" />
-        <div className="pt-1 text-xl sm:text-2xl">
-          {APP_NAME}
-        </div>
+        <Image
+          width={40}
+          height={40}
+          src={Logo}
+          alt="Logo"
+          className="h-12 w-12"
+        />
+        <div className="pt-1 text-xl sm:text-2xl">{APP_NAME}</div>
       </Link>
 
       <div className="flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
