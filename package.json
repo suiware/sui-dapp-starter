@@ -1,6 +1,6 @@
 {
   "name": "sui-dapp-starter",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Easy-to-Use Full-Stack Sui Starter",
   "scripts": {
     "dev": "pnpm frontend:dev",
