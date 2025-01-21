@@ -44,12 +44,12 @@ Before you begin, install the following:
 
 3. Choose a frontend framework:
 
-For React:
+For **React**:
 ```bash
 pnpm frontend:init:react
 ```
 
-For Next.js:
+For **Next.js**:
 
 ```bash
 pnpm frontend:init:nextjs
