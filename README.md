@@ -42,14 +42,14 @@ Before you begin, install the following:
 
 2. Clone the resulting repo locally.
 
-3. Choose the frontend framework:
+3. Choose a frontend framework:
 
-For React frontend run:
+For React run:
 ```bash
 pnpm frontend:init:react
 ```
 
-For Next.js frontend run:
+For Next.js run:
 
 ```bash
 pnpm frontend:init:nextjs
