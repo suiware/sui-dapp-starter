@@ -29,5 +29,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm frontend:build
-      - run: pnpm frontend:lint
+      - run: pnpm --filter=frontend build
+      - run: pnpm --filter=frontend lint
+      - run: pnpm --filter=frontend-next build
+      - run: pnpm --filter=frontend-next lint
