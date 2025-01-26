@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { useParams } from 'react-router'
 import Layout from '~~/components/layout/Layout'
 import CounterForm from '~~/dapp/components/CounterForm'
-import NetworkSupportChecker from '../components/NetworkSupportChecker'
+import NetworkSupportChecker from '../../components/NetworkSupportChecker'
 
 const CounterPage: FC = () => {
   const { counterId } = useParams()

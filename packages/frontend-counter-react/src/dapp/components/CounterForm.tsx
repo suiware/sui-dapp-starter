@@ -1,8 +1,10 @@
 import { useCurrentAccount } from '@mysten/dapp-kit'
+import { isValidSuiObjectId } from '@mysten/sui/utils'
 import { SuiSignAndExecuteTransactionOutput } from '@mysten/wallet-standard'
 import { Button } from '@radix-ui/themes'
 import useTransact from '@suiware/kit/useTransact'
 import { FC, MouseEvent, PropsWithChildren, useState } from 'react'
+import { useParams } from 'react-router'
 import CustomConnectButton from '~~/components/CustomConnectButton'
 import Loading from '~~/components/Loading'
 import {
@@ -18,12 +20,13 @@ import { getResponseContentField, transactionUrl } from '~~/helpers/network'
 import { notification } from '~~/helpers/notification'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'
 
-const CounterForm: FC<{ counterId: string }> = ({ counterId }) => {
+const CounterForm: FC<{counterId: string}> = ({ counterId }) => {
   const currentAccount = useCurrentAccount()
   const { useNetworkVariable } = useNetworkConfig()
   const packageId = useNetworkVariable(CONTRACT_PACKAGE_VARIABLE_NAME)
   const [notificationId, setNotificationId] = useState<string>()
   const explorerUrl = useNetworkVariable(EXPLORER_URL_VARIABLE_NAME)
+
   const { data, isPending, error, refetch } = useCounter(counterId)
 
   const { transact: increment } = useTransact({
@@ -83,6 +86,8 @@ const CounterForm: FC<{ counterId: string }> = ({ counterId }) => {
 
   // @todo: Handle the following errors with toasts.
   if (error) return <TextMessage>Error: {error.message}</TextMessage>
+
+
 
   if (!data.data) return <TextMessage>Counter not found</TextMessage>
 

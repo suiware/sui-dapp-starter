@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Layout from '~~/components/layout/Layout'
 import CreateCounterForm from '~~/dapp/components/CreateCounterForm'
-import NetworkSupportChecker from '../components/NetworkSupportChecker'
+import NetworkSupportChecker from '../../components/NetworkSupportChecker'
 
 const IndexPage: FC = () => {
   return (
