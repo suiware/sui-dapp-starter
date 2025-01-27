@@ -42,18 +42,13 @@ Before you begin, install the following:
 
 2. Clone the resulting repo locally.
 
-3. Choose a frontend framework:
+3. Choose a template by running the corresponding init command:
 
-For **React**:
-```bash
-pnpm frontend:init:react
-```
-
-For **Next.js**:
-
-```bash
-pnpm frontend:init:nextjs
-```
+| Template | Init command | Description |
+| --- | --- | --- |
+| Greeting (React) | `pnpm init:template:greeting-react` | A **default template** with a Move contract which utilizes Sui Object Display (NFT) and native Sui Randomness. Frontend is built with React, SWC, Vite, Tailwind. |
+| Greeting (Next.js) | `pnpm init:template:greeting-next` | The Move part is the same as in Greetings (React), but the frontend is built with Next.js. |
+| Counter (React) | `pnpm init:template:counter-react` | A lightweight template with a simple Move counter contract and a React frontend. |
 
 ### Option 2. Use CLI
 
