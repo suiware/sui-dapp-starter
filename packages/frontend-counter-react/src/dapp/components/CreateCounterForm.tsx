@@ -37,7 +37,7 @@ const CreateCounterForm = () => {
         notificationId
       )
 
-      const counterId = response.effects?.created?.[0]?.reference?.objectId!
+      const counterId = response.effects?.created?.[0]?.reference?.objectId
       navigate(`/counter/${counterId}`)
     },
     onError: (e: Error) => {
