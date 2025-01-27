@@ -11,8 +11,8 @@
     "format": "pnpm frontend:format",
 
     "init:template:greeting-react": "rm -rf ./packages/backend-counter && rm -rf ./packages/frontend-greeting-next && rm -rf ./packages/frontend-counter-react",
-    "init:template:greeting-next": "rm -rf ./packages/backend-counter && rm -rf ./packages/frontend && rm -rf ./packages/frontend-counter-react && mv -f ./packages/frontend-greetings-next ./packages/frontend",
-    "init:template:counter-react": "rm -rf ./packages/backend && rm -rf ./packages/frontend && rm -rf ./packages/frontend-greetings-next && mv -f ./packages/frontend-counter-react ./packages/frontend && mv -f ./packages/backend-counter ./packages/backend",
+    "init:template:greeting-next": "rm -rf ./packages/backend-counter && rm -rf ./packages/frontend && rm -rf ./packages/frontend-counter-react && mv -f ./packages/frontend-greeting-next ./packages/frontend",
+    "init:template:counter-react": "rm -rf ./packages/backend && rm -rf ./packages/frontend && rm -rf ./packages/frontend-greeting-next && mv -f ./packages/frontend-counter-react ./packages/frontend && mv -f ./packages/backend-counter ./packages/backend",
     
     "frontend:dev": "pnpm --filter frontend dev",
     "frontend:build": "pnpm --filter frontend build",
