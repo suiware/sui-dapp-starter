@@ -31,5 +31,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter=frontend build
       - run: pnpm --filter=frontend lint
-      - run: pnpm --filter=frontend-next build
-      - run: pnpm --filter=frontend-next lint
+      - run: pnpm --filter=frontend-greeting-next build
+      - run: pnpm --filter=frontend-greeting-next lint
+      - run: pnpm --filter=frontend-counter-react build
+      - run: pnpm --filter=frontend-counter-react lint
