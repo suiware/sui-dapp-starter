@@ -38,7 +38,7 @@
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^8.20.0",
-    "@typescript-eslint/parser": "^8.20.0",
+    "@typescript-eslint/parser": "^8.21.0",
     "autoprefixer": "^10.4.20",
     "env-file-rw": "^1.0.0",
     "eslint": "^9.18.0",
