@@ -46,8 +46,8 @@ Before you begin, install the following:
 
 | Template | Init command | Description |
 | --- | --- | --- |
-| Greetings (React) | `pnpm init:template:greetings-react` | A **default template** with a Move contract which utilizes Sui Object Display (NFT) and native Sui Randomness. Frontend is built with React, SWC, Vite, Tailwind. |
-| Greetings (Next.js) | `pnpm init:template:greetings-next` | The Move part is the same as in Greetings (React), but the frontend is built with Next.js. |
+| Greeting (React) | `pnpm init:template:greeting-react` | A **default template** with a Move contract which utilizes Sui Object Display (NFT) and native Sui Randomness. Frontend is built with React, SWC, Vite, Tailwind. |
+| Greeting (Next.js) | `pnpm init:template:greeting-next` | The Move part is the same as in Greetings (React), but the frontend is built with Next.js. |
 | Counter (React) | `pnpm init:template:counter-react` | A lightweight template with a simple Move counter contract and a React frontend. |
 
 ### Option 2. Use CLI
