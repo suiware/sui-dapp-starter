@@ -44,11 +44,13 @@ Before you begin, install the following:
 
 3. Choose a template by running the corresponding init command:
 
-| Template | Init command | Description |
-| --- | --- | --- |
-| Greeting (React) | `pnpm init:template:greeting-react` | A **default template** with a Move contract which utilizes Sui Object Display (NFT) and native Sui Randomness. Frontend is built with React, SWC, Vite, Tailwind. |
-| Greeting (Next.js) | `pnpm init:template:greeting-next` | The Move part is the same as in Greetings (React), but the frontend is built with Next.js. |
-| Counter (React) | `pnpm init:template:counter-react` | A lightweight template with a simple Move counter contract and a React frontend. |
+| Template | Init command |
+| --- | --- |
+| Greeting (React) | `pnpm init:template:greeting-react` |
+| Greeting (Next.js) | `pnpm init:template:greeting-next` |
+| Counter (React) | `pnpm init:template:counter-react` |
+
+[Template Guide](https://sui-dapp-starter.dev/docs/templates)
 
 ### Option 2. Use CLI
 
