@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sds-light: #ffffffde;
+  --sds-dark: #011631;
+  --sds-pink: #fed5f4;
+  --sds-blue: #4da2ff;
+  --sds-font-inter: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  color-scheme: light dark;
+
+  font-family: var(--sds-font-inter);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, #root {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom styles where it's not possible to use Tailwind classes. */
+.sds-connect-button-container {
+  button {
+    padding: 8px 16px !important;
+    border-radius: 8px !important;
+  }
+  div {
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-family: inherit !important;
+  }
+}
+/* ~ Custom styles where it's not possible to use Tailwind classes. */

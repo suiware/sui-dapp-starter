@@ -4,7 +4,6 @@ import { useCurrentAccount } from '@mysten/dapp-kit'
 import { Link } from '@radix-ui/themes'
 import Faucet from '@suiware/kit/Faucet'
 import { HeartIcon, SearchIcon } from 'lucide-react'
-import ThemeSwitcher from '../ThemeSwitcher'
 import {
   CONTRACT_PACKAGE_VARIABLE_NAME,
   EXPLORER_URL_VARIABLE_NAME,
@@ -12,6 +11,7 @@ import {
 import { packageUrl } from '../../helpers/networks'
 import { notification } from '../../helpers/notification'
 import useNetworkConfig from '../../hooks/useNetworkConfig'
+import ThemeSwitcher from '../ThemeSwitcher'
 
 const Footer = () => {
   const { useNetworkVariables } = useNetworkConfig()
