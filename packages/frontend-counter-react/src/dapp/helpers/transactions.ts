@@ -25,6 +25,7 @@ export const prepareIncrementCounterTransaction = (
 
   return tx
 }
+
 export const prepareDecrementCounterTransaction = (
   packageId: string,
   objectId: string

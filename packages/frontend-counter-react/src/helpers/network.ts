@@ -8,6 +8,10 @@ export const transactionUrl = (baseExplorerUrl: string, txDigest: string) => {
   return `${baseExplorerUrl}/txblock/${txDigest}`
 }
 
+export const objectUrl = (baseExplorerUrl: string, objectId: string) => {
+  return packageUrl(baseExplorerUrl, objectId)
+}
+
 export const packageUrl = (baseExplorerUrl: string, packageId: string) => {
   // Local explorer doesn't have a package view, so we stick with object view instead.
   const subpath =

@@ -60,7 +60,7 @@ const CreateCounterForm = () => {
     <div className="my-2 flex flex-grow flex-col items-center justify-center">
       <div className="flex flex-col">
         <Button variant="solid" size="4" onClick={handleCreateCounterClick}>
-          Create counter
+          Create Counter
         </Button>
       </div>
     </div>

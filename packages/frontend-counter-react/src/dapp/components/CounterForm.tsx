@@ -1,10 +1,8 @@
 import { useCurrentAccount } from '@mysten/dapp-kit'
-import { isValidSuiObjectId } from '@mysten/sui/utils'
 import { SuiSignAndExecuteTransactionOutput } from '@mysten/wallet-standard'
-import { Button } from '@radix-ui/themes'
+import { Badge, Button, Link } from '@radix-ui/themes'
 import useTransact from '@suiware/kit/useTransact'
 import { FC, MouseEvent, PropsWithChildren, useState } from 'react'
-import { useParams } from 'react-router'
 import CustomConnectButton from '~~/components/CustomConnectButton'
 import Loading from '~~/components/Loading'
 import {
@@ -16,11 +14,15 @@ import {
   prepareIncrementCounterTransaction,
 } from '~~/dapp/helpers/transactions'
 import useCounter from '~~/dapp/hooks/useCounter'
-import { getResponseContentField, transactionUrl } from '~~/helpers/network'
+import {
+  getResponseContentField,
+  objectUrl,
+  transactionUrl,
+} from '~~/helpers/network'
 import { notification } from '~~/helpers/notification'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'
 
-const CounterForm: FC<{counterId: string}> = ({ counterId }) => {
+const CounterForm: FC<{ counterId: string }> = ({ counterId }) => {
   const currentAccount = useCurrentAccount()
   const { useNetworkVariable } = useNetworkConfig()
   const packageId = useNetworkVariable(CONTRACT_PACKAGE_VARIABLE_NAME)
@@ -87,16 +89,27 @@ const CounterForm: FC<{counterId: string}> = ({ counterId }) => {
   // @todo: Handle the following errors with toasts.
   if (error) return <TextMessage>Error: {error.message}</TextMessage>
 
-
-
   if (!data.data) return <TextMessage>Counter not found</TextMessage>
 
   return (
     <div className="my-2 flex flex-grow flex-col items-center justify-center">
-      <div>Counter: {counterId}</div>
+      <div className="flex flex-col items-center justify-center gap-2">
+        <div className='text-lg'>Counter</div>
+        <div className="text-sm">
+          <Link
+            href={objectUrl(explorerUrl, counterId)}
+            target="_blank"
+            rel="noopener noreferrer"
+            highContrast={true}
+            className="break-all text-center"
+          >
+            {counterId}
+          </Link>
+        </div>
+      </div>
 
       <div>
-        <div className="my-2 flex w-full max-w-xs flex-row items-center justify-center gap-6 p-2 sm:max-w-lg">
+        <div className="mt-4 flex w-full max-w-xs flex-row items-center justify-center gap-8 p-2 sm:max-w-lg">
           <Button
             variant="solid"
             size="4"
@@ -105,9 +118,9 @@ const CounterForm: FC<{counterId: string}> = ({ counterId }) => {
               handleDecrement(counterId)
             }}
           >
-            -
+            -1
           </Button>
-          <div>{getResponseContentField(data, 'value')}</div>
+          <Badge variant='outline' className='px-5 py-2 text-lg'>{getResponseContentField(data, 'value')}</Badge>
           <Button
             variant="solid"
             size="4"
@@ -116,7 +129,7 @@ const CounterForm: FC<{counterId: string}> = ({ counterId }) => {
               handleIncrement(counterId)
             }}
           >
-            +
+            +1
           </Button>
         </div>
       </div>
