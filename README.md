@@ -16,7 +16,7 @@ Most of the Sui starters I found were either very basic or one-sided (frontend o
 - **[Local Sui Explorer](https://github.com/suiware/sui-explorer)**: Browse your transactions and objects locally
 - **pnpm**: More efficient package management for monorepos
 - **TypeScript**: Less error-prone JavaScript
-- **React**: Good old React for truly decentralized apps
+- **React or Next.js**: Choose a template with a framework of your choice
 - **Tailwind CSS**: Utility-first CSS for more efficient styling
 - **Vite + SWC**: Faster app bundling and optimizing
 - **Radix UI**: Accessible React components to prototype quicker 
@@ -24,7 +24,7 @@ Most of the Sui starters I found were either very basic or one-sided (frontend o
 - **[@suiware/kit](https://www.npmjs.com/package/@suiware/kit)**: Useful react primitives, such as useTransact, useNetworkType, NetworkType, useBalance, Balance, useFaucet, Faucet and more
 - **Frontend Deployment**: [Firebase](https://sui-dapp-starter.dev/docs/frontend/deployment/firebase), [Walrus Sites](https://sui-dapp-starter.dev/docs/frontend/deployment/walrus), [Arweave](https://sui-dapp-starter.dev/docs/frontend/deployment/arweave)
 - **One-liner Install**: Just `pnpm create sui-dapp@latest`
-- **[Demo app](https://demo.sui-dapp-starter.dev/)**: Illustrates the use of Sui On-Chain Randomness and Sui Object Display (NFT)
+- **[Demo app](https://demo.sui-dapp-starter.dev/)**: Default Greeting (React) template
 
 ## Prerequisites
 
