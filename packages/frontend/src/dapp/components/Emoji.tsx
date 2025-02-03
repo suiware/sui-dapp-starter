@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { numToAnimalEmoji } from '~~/helpers/greeting/misc'
+import { numToAnimalEmoji } from '~~/dapp/helpers/misc'
 
 // Animal emojis are represented by the range [1F400-1F43F] https://apps.timwhitlock.info/unicode/inspect/hex/1F400-1F43F
 // The corresponding demo Move package chooses a number from the range [1,64] randomly,

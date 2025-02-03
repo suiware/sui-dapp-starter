@@ -1,6 +1,6 @@
 import { useCurrentAccount, useSuiClientQuery } from '@mysten/dapp-kit'
 import { CONTRACT_PACKAGE_VARIABLE_NAME } from '~~/config/networks'
-import { fullStructName } from '~~/helpers/greeting/misc'
+import { fullStructName } from '~~/helpers/network'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'
 
 const useOwnGreeting = () => {

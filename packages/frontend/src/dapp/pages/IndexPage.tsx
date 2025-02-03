@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import GreetingForm from '~~/components/GreetingForm'
+import GreetingForm from '~~/dapp/components/GreetingForm'
 import Layout from '~~/components/layout/Layout'
-import NetworkSupportChecker from './NetworkSupportChecker'
+import NetworkSupportChecker from '../../components/NetworkSupportChecker'
 
 const IndexPage: FC = () => {
   return (

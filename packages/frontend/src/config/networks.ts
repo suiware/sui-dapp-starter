@@ -19,7 +19,6 @@ export const TESTNET_EXPLORER_URL = 'https://testnet.suivision.xyz'
 export const MAINNET_EXPLORER_URL = 'https://suivision.xyz'
 
 export const CONTRACT_PACKAGE_VARIABLE_NAME = 'contractPackageId'
-export const CONTRACT_MODULE_NAME = 'greeting'
 
 export const EXPLORER_URL_VARIABLE_NAME = 'explorerUrl'
 

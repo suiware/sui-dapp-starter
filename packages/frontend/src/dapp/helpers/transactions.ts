@@ -1,5 +1,5 @@
 import { Transaction } from '@mysten/sui/transactions'
-import { fullFunctionName } from '~~/helpers/greeting/misc'
+import { fullFunctionName } from '~~/helpers/network'
 
 export const prepareCreateGreetingTransaction = (
   packageId: string
