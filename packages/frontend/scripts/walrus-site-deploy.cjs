@@ -16,6 +16,7 @@ const CONFIG_FILE_PATH = './.env.local'
 const WALRUS_SITES_CONFIG_PATH = './walrus-sites.yaml'
 const SITE_PATH = './dist'
 const WALLET_CONFIG_PATH_FULL = '~/suibase/workdirs/testnet/config/client.yaml'
+const NUMBER_OF_EPOCHS = 'max'
 
 const main = async () => {
   const configFilePathFull = path.join(process.cwd(), CONFIG_FILE_PATH)
@@ -43,7 +44,7 @@ const main = async () => {
   if (siteObjectId == null) {
     console.log('Publishing the app to Walrus Sites...')
     const { stdout, stderr } = await exec(
-      `site-builder --config ${walrusConfigPathFull} --wallet ${WALLET_CONFIG_PATH_FULL} publish ${sitePathFull}`
+      `site-builder --config ${walrusConfigPathFull} --wallet ${WALLET_CONFIG_PATH_FULL} publish --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull}`
     )
 
     // Get the site object ID from the publish command output.
@@ -82,7 +83,9 @@ const main = async () => {
   }
 
   if (siteObjectId == null) {
-    console.error('~ The script could not find the site object ID in the output.')
+    console.error(
+      '~ The script could not find the site object ID in the output.'
+    )
     console.error(
       '~ If you see it, please add WALRUS_SITE_OBJECT_ID=[site object ID from the output] into packages/frontend/.env.local manually.'
     )
@@ -91,7 +94,7 @@ const main = async () => {
 
   console.log('Updating the app on Walrus Sites...')
   execSync(
-    `site-builder --config ${walrusConfigPathFull} --wallet ${WALLET_CONFIG_PATH_FULL} update ${sitePathFull} ${siteObjectId}`,
+    `site-builder --config ${walrusConfigPathFull} --wallet ${WALLET_CONFIG_PATH_FULL} update --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull} ${siteObjectId}`,
     { stdio: 'inherit' }
   )
 }
