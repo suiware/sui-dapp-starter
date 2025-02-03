@@ -8,7 +8,7 @@ import Loading from '~~/components/Loading'
 import {
   CONTRACT_PACKAGE_VARIABLE_NAME,
   EXPLORER_URL_VARIABLE_NAME,
-} from '~~/config/networks'
+} from '~~/config/network'
 import AnimalEmoji from '~~/dapp/components/Emoji'
 import {
   prepareCreateGreetingTransaction,

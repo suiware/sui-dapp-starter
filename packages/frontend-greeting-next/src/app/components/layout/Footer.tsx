@@ -7,8 +7,8 @@ import { HeartIcon, SearchIcon } from 'lucide-react'
 import {
   CONTRACT_PACKAGE_VARIABLE_NAME,
   EXPLORER_URL_VARIABLE_NAME,
-} from '../../config/networks'
-import { packageUrl } from '../../helpers/networks'
+} from '../../config/network'
+import { packageUrl } from '../../helpers/network'
 import { notification } from '../../helpers/notification'
 import useNetworkConfig from '../../hooks/useNetworkConfig'
 import ThemeSwitcher from '../ThemeSwitcher'

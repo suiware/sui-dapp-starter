@@ -11,7 +11,7 @@ import {
   MAINNET_EXPLORER_URL,
   TESTNET_CONTRACT_PACKAGE_ID,
   TESTNET_EXPLORER_URL,
-} from '../config/networks'
+} from '../config/network'
 import { ENetwork } from '../types/ENetwork'
 
 const useNetworkConfig = () => {

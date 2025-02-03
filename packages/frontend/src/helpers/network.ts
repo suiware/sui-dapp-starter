@@ -1,6 +1,6 @@
 import { SuiObjectResponse } from '@mysten/sui/client'
 import { isValidSuiObjectId } from '@mysten/sui/utils'
-import { CONTRACT_PACKAGE_ID_NOT_DEFINED } from '~~/config/networks'
+import { CONTRACT_PACKAGE_ID_NOT_DEFINED } from '~~/config/network'
 import { CONTRACT_MODULE_NAME } from '~~/dapp/config/network'
 import { ENetwork } from '~~/types/ENetwork'
 

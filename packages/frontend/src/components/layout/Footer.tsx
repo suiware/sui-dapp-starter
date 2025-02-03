@@ -6,7 +6,7 @@ import ThemeSwitcher from '~~/components/ThemeSwitcher'
 import {
   CONTRACT_PACKAGE_VARIABLE_NAME,
   EXPLORER_URL_VARIABLE_NAME,
-} from '~~/config/networks'
+} from '~~/config/network'
 import { packageUrl } from '~~/helpers/network'
 import { notification } from '~~/helpers/notification'
 import useNetworkConfig from '~~/hooks/useNetworkConfig'

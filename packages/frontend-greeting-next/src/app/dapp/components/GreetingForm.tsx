@@ -6,27 +6,27 @@ import { Button, TextField } from '@radix-ui/themes'
 import useTransact from '@suiware/kit/useTransact'
 import Image from 'next/image'
 import { ChangeEvent, FC, MouseEvent, PropsWithChildren, useState } from 'react'
-import CustomConnectButton from '../components/CustomConnectButton'
-import AnimalEmoji from '../components/Emoji'
-import Loading from '../components/Loading'
+import CustomConnectButton from '~~/components/CustomConnectButton'
+import Loading from '~~/components/Loading'
 import {
   CONTRACT_PACKAGE_VARIABLE_NAME,
   EXPLORER_URL_VARIABLE_NAME,
-} from '../config/networks'
-import {
-  getResponseContentField,
-  getResponseDisplayField,
-  getResponseObjectId,
-} from '../helpers/greeting/misc'
+} from '~~/config/network'
+import AnimalEmoji from '~~/dapp/components/Emoji'
 import {
   prepareCreateGreetingTransaction,
   prepareResetGreetingTransaction,
   prepareSetGreetingTransaction,
-} from '../helpers/greeting/transactions'
-import { transactionUrl } from '../helpers/networks'
-import { notification } from '../helpers/notification'
-import useNetworkConfig from '../hooks/useNetworkConfig'
-import useOwnGreeting from '../hooks/useOwnGreeting'
+} from '~~/dapp/helpers/transactions'
+import useOwnGreeting from '~~/dapp/hooks/useOwnGreeting'
+import {
+  getResponseContentField,
+  getResponseDisplayField,
+  getResponseObjectId,
+  transactionUrl,
+} from '~~/helpers/network'
+import { notification } from '~~/helpers/notification'
+import useNetworkConfig from '~~/hooks/useNetworkConfig'
 
 const GreetingForm = () => {
   const [name, setName] = useState<string>('')
