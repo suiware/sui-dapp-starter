@@ -1,4 +1,4 @@
-import GreetingForm from './components/GreetingForm'
+import GreetingForm from '~~/dapp/components/GreetingForm'
 import NetworkSupportChecker from './components/NetworkSupportChecker'
 
 export default function Home() {
