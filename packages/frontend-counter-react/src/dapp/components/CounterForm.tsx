@@ -94,7 +94,7 @@ const CounterForm: FC<{ counterId: string }> = ({ counterId }) => {
   return (
     <div className="my-2 flex flex-grow flex-col items-center justify-center">
       <div className="flex flex-col items-center justify-center gap-2">
-        <div className='text-lg'>Counter</div>
+        <div className="text-lg">Counter</div>
         <div className="text-sm">
           <Link
             href={objectUrl(explorerUrl, counterId)}
@@ -120,7 +120,9 @@ const CounterForm: FC<{ counterId: string }> = ({ counterId }) => {
           >
             -1
           </Button>
-          <Badge variant='outline' className='px-5 py-2 text-lg'>{getResponseContentField(data, 'value')}</Badge>
+          <Badge variant="outline" className="px-5 py-2 text-lg">
+            {getResponseContentField(data, 'value')}
+          </Badge>
           <Button
             variant="solid"
             size="4"
