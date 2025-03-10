@@ -42,7 +42,7 @@
     "autoprefixer": "^10.4.20",
     "env-file-rw": "^1.0.0",
     "eslint": "^9.21.0",
-    "eslint-config-prettier": "^10.0.2",
+    "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "postcss": "^8.5.3",
