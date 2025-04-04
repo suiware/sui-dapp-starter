@@ -14,20 +14,16 @@ const { execSync, exec } = require('node:child_process')
 // Configuration.
 const WALRUS_SITE_OBJECT_ID_VARIABLE_NAME = 'WALRUS_SITE_OBJECT_ID'
 const CONFIG_FILE_PATH = './.env.local'
-const WALRUS_SITES_CONFIG_PATH = './walrus-sites.yaml'
 const SITE_PATH = './dist'
-const WALLET_CONFIG_PATH_FULL = '~/suibase/workdirs/testnet/config/client.yaml'
 const NUMBER_OF_EPOCHS = 'max'
-const BUY_WAL_TOKEN_BEFORE_RUN = false
+const BUY_WAL_TOKEN_BEFORE_RUN = true
 const FORCE_UPDATE_EVERYTHING = false
+const WALRUS_CLI = 'twalrus'
+const WALRUS_SITES_CLI = 'tsite'
 // ~ Configuration.
 
 const main = async () => {
   const configFilePathFull = path.join(process.cwd(), CONFIG_FILE_PATH)
-  const walrusConfigPathFull = path.join(
-    process.cwd(),
-    WALRUS_SITES_CONFIG_PATH
-  )
   const sitePathFull = path.join(process.cwd(), SITE_PATH)
 
   await createFileIfNecessary(configFilePathFull)
@@ -43,7 +39,7 @@ const main = async () => {
   if (siteObjectId == null) {
     console.log('Publishing the app to Walrus Sites...')
     const { stdout, stderr } = await exec(
-      `site-builder --config ${walrusConfigPathFull} --wallet ${WALLET_CONFIG_PATH_FULL} publish --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull}`
+      `${WALRUS_SITES_CLI} publish --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull}`
     )
 
     // Get the site object ID from the publish command output.
@@ -93,7 +89,7 @@ const main = async () => {
 
   console.log('Updating the app on Walrus Sites...')
   execSync(
-    `site-builder --config ${walrusConfigPathFull} --wallet ${WALLET_CONFIG_PATH_FULL} update ${FORCE_UPDATE_EVERYTHING ? '--force' : ''} --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull} ${siteObjectId}`,
+    `${WALRUS_SITES_CLI} update ${FORCE_UPDATE_EVERYTHING ? '--force' : ''} --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull} ${siteObjectId}`,
     { stdio: 'inherit' }
   )
 }
@@ -140,7 +136,7 @@ const setEnvVar = async (envFilePath, name, value) => {
 const buyWalTokenIfPossible = () => {
   try {
     console.log('Buying test WAL coins from the faucet...')
-    execSync(`walrus --wallet ${WALLET_CONFIG_PATH_FULL} get-wal`, {
+    execSync(`${WALRUS_CLI} get-wal`, {
       stdio: 'inherit',
     })
   } catch (e) {
