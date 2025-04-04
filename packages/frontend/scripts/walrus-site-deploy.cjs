@@ -12,26 +12,26 @@ const EnvFileWriter = require('env-file-rw').default
 const { execSync, exec } = require('node:child_process')
 
 // Configuration.
-const WALRUS_SITE_OBJECT_ID_VARIABLE_NAME = 'WALRUS_SITE_OBJECT_ID'
 const CONFIG_FILE_PATH = './.env.local'
 const SITE_PATH = './dist'
-const NUMBER_OF_EPOCHS = 'max'
-const BUY_WAL_TOKEN_BEFORE_RUN = true
+const NUMBER_OF_EPOCHS = 1 // "max" means 53 epochs or 2 years currently.
+const BUY_WAL_TOKEN_BEFORE_RUN = false
 const FORCE_UPDATE_EVERYTHING = false
-const WALRUS_CLI = 'twalrus'
-const WALRUS_SITES_CLI = 'tsite'
+const WALRUS_SITE_OBJECT_ID_VARIABLE_NAME_BASE = 'WALRUS_SITE_OBJECT_ID'
 // ~ Configuration.
 
 const main = async () => {
+  const network = getNetworkFromArgs()
+
   const configFilePathFull = path.join(process.cwd(), CONFIG_FILE_PATH)
   const sitePathFull = path.join(process.cwd(), SITE_PATH)
 
   await createFileIfNecessary(configFilePathFull)
 
-  let siteObjectId = await readSiteObjectId(configFilePathFull)
+  let siteObjectId = await readSiteObjectId(configFilePathFull, network)
 
   if (BUY_WAL_TOKEN_BEFORE_RUN) {
-    buyWalTokenIfPossible()
+    buyWalTokenIfPossible(network)
   }
 
   // If the site has not yet been published (no site object ID in the config),
@@ -39,7 +39,7 @@ const main = async () => {
   if (siteObjectId == null) {
     console.log('Publishing the app to Walrus Sites...')
     const { stdout, stderr } = await exec(
-      `${WALRUS_SITES_CLI} publish --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull}`
+      `${getWalrusSitesCli(network)} publish --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull}`
     )
 
     // Get the site object ID from the publish command output.
@@ -57,11 +57,7 @@ const main = async () => {
       siteObjectId = result[1].trim()
 
       // Save site object ID to the config file.
-      await setEnvVar(
-        configFilePathFull,
-        WALRUS_SITE_OBJECT_ID_VARIABLE_NAME,
-        siteObjectId
-      )
+      await saveSiteObjectId(configFilePathFull, network, siteObjectId)
     })
 
     stderr.on('data', async (error) => {
@@ -89,7 +85,7 @@ const main = async () => {
 
   console.log('Updating the app on Walrus Sites...')
   execSync(
-    `${WALRUS_SITES_CLI} update ${FORCE_UPDATE_EVERYTHING ? '--force' : ''} --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull} ${siteObjectId}`,
+    `${getWalrusSitesCli(network)} update ${FORCE_UPDATE_EVERYTHING ? '--force' : ''} --epochs ${NUMBER_OF_EPOCHS} ${sitePathFull} ${siteObjectId}`,
     { stdio: 'inherit' }
   )
 }
@@ -98,12 +94,29 @@ const main = async () => {
  * Read Walrus site object ID from .env.local.
  *
  * @param {string} configFilePath
+ * @param {string} network
  * @returns
  */
-const readSiteObjectId = async (configFilePath) => {
+const readSiteObjectId = async (configFilePath, network) => {
   const envFileWriter = new EnvFileWriter(configFilePath, false)
   await envFileWriter.parse()
-  return envFileWriter.get(WALRUS_SITE_OBJECT_ID_VARIABLE_NAME, null)
+  return envFileWriter.get(getWalrusObjectIdVariableName(network), null)
+}
+
+/**
+ * Save Walrus site object ID t0.env.local.
+ *
+ * @param {string} configFilePath
+ * @param {string} network
+ * @param {string} siteObjectId
+ * @returns
+ */
+const saveSiteObjectId = async (configFilePath, network, siteObjectId) => {
+  await setEnvVar(
+    configFilePath,
+    getWalrusObjectIdVariableName(network),
+    siteObjectId
+  )
 }
 
 /**
@@ -133,15 +146,38 @@ const setEnvVar = async (envFilePath, name, value) => {
   await envFileWriter.save()
 }
 
-const buyWalTokenIfPossible = () => {
+const buyWalTokenIfPossible = (network) => {
   try {
-    console.log('Buying test WAL coins from the faucet...')
-    execSync(`${WALRUS_CLI} get-wal`, {
+    console.log('Buying WAL coins...')
+    execSync(`${getWalrusCli(network)} get-wal`, {
       stdio: 'inherit',
     })
   } catch (e) {
     console.warn(e)
   }
+}
+
+const getNetworkFromArgs = () => {
+  const arg = process.argv.slice(2)
+
+  switch (arg[0]) {
+    case '-n':
+      return arg[1]
+
+    default:
+      return 'testnet'
+  }
+}
+
+const getWalrusCli = (network) => {
+  return network === 'mainnet' ? 'mwalrus' : 'twalrus'
+}
+const getWalrusSitesCli = (network) => {
+  return network === 'mainnet' ? 'msite' : 'tsite'
+}
+
+const getWalrusObjectIdVariableName = (network) => {
+  return `${WALRUS_SITE_OBJECT_ID_VARIABLE_NAME_BASE}_${network.toUpperCase()}`
 }
 
 // Main entry point.

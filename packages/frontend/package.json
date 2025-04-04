@@ -11,9 +11,9 @@
     "format": "prettier --write './index.html' './src/**/*.{js,jsx,ts,tsx}'",
     "deploy:firebase:init": "firebase login && firebase use --add",
     "deploy:firebase": "firebase deploy --only hosting",
-    "deploy:walrus": "pnpm run build && pnpm run walrus-site-deploy",
-    "deploy:arweave": "ARWEAVE_DEPLOYMENT=true pnpm run build && pnpx arkb deploy ./dist -w ./arweave-keyfile.json --auto-confirm",
-    "walrus-site-deploy": "node ./scripts/walrus-site-deploy.cjs"
+    "deploy:walrus:testnet": "pnpm run build && node ./scripts/walrus-site-deploy.cjs -n testnet",
+    "deploy:walrus:mainnet": "pnpm run build && node ./scripts/walrus-site-deploy.cjs -n mainnet",
+    "deploy:arweave": "ARWEAVE_DEPLOYMENT=true pnpm run build && pnpx arkb deploy ./dist -w ./arweave-keyfile.json --auto-confirm"
   },
   "dependencies": {
     "@mysten/dapp-kit": "^0.14.53",
