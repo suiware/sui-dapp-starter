@@ -21,7 +21,8 @@
     "frontend:format": "pnpm --filter frontend format",
     "frontend:deploy:firebase:init": "pnpm --filter frontend deploy:firebase:init",
     "frontend:deploy:firebase": "pnpm --filter frontend deploy:firebase",
-    "frontend:deploy:walrus": "pnpm --filter frontend deploy:walrus",
+    "frontend:deploy:walrus:testnet": "pnpm --filter frontend deploy:walrus:testnet",
+    "frontend:deploy:walrus:mainnet": "pnpm --filter frontend deploy:walrus:mainnet",
     "frontend:deploy:arweave": "pnpm --filter frontend deploy:arweave",
     
     "backend:build": "pnpm --filter backend build",
