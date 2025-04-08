@@ -11,8 +11,8 @@
     "format": "prettier --write './index.html' './src/**/*.{js,jsx,ts,tsx}'",
     "deploy:firebase:init": "firebase login && firebase use --add",
     "deploy:firebase": "firebase deploy --only hosting",
-    "deploy:walrus:testnet": "pnpm run build && node ./scripts/walrus-site-deploy.cjs -n testnet",
-    "deploy:walrus:mainnet": "pnpm run build && node ./scripts/walrus-site-deploy.cjs -n mainnet",
+    "deploy:walrus:testnet": "pnpm build && pnpx walrus-sites-deploy -n testnet",
+    "deploy:walrus:mainnet": "pnpm build && pnpx walrus-sites-deploy -n mainnet",
     "deploy:arweave": "ARWEAVE_DEPLOYMENT=true pnpm run build && pnpx arkb deploy ./dist -w ./arweave-keyfile.json --auto-confirm"
   },
   "dependencies": {
