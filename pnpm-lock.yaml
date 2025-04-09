@@ -92,9 +92,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.3)
-      env-file-rw:
-        specifier: ^1.0.0
-        version: 1.0.0
       eslint:
         specifier: ^9.23.0
         version: 9.23.0(jiti@1.21.7)
@@ -198,9 +195,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.3)
-      env-file-rw:
-        specifier: ^1.0.0
-        version: 1.0.0
       eslint:
         specifier: ^9.23.0
         version: 9.23.0(jiti@1.21.7)
@@ -307,9 +301,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.3)
-      env-file-rw:
-        specifier: ^1.0.0
-        version: 1.0.0
       eslint:
         specifier: ^9.23.0
         version: 9.23.0(jiti@1.21.7)
