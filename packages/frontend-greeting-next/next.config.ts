@@ -13,6 +13,17 @@ const nextConfig: NextConfig = {
     "@radix-ui/react-select",
     "@radix-ui/react-toggle",
   ],
+  turbopack: {
+    resolveExtensions: [
+      ".mdx",
+      ".tsx",
+      ".ts",
+      ".jsx",
+      ".js",
+      ".mjs",
+      ".json",
+    ],
+  },
   webpack: (config) => {
     config.externals = [...(config.externals || []), "encoding"];
     return config;
